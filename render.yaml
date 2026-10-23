@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: humaniti-ai-class-evidence
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt && python scripts/prepare_browser_assets.py
+    startCommand: python server.py
+    healthCheckPath: /api/health
+    envVars:
+      - key: HOST
+        value: 0.0.0.0
+      - key: BROWSER_ASSET_DIR
+        value: /opt/render/project/src/browser-assets
+      - key: GEMINI_MODEL
+        value: gemini-3.8-flash
+      - key: GEMINI_API_KEY
+        sync: false
+      - key: APP_ACCESS_TOKEN
+        sync: false

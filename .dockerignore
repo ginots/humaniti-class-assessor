@@ -1,0 +1,9 @@
+*
+!Dockerfile
+!requirements.txt
+!assessment.py
+!server.py
+!static/
+!static/**
+!scripts/
+!scripts/prepare_browser_assets.py
